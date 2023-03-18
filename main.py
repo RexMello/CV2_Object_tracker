@@ -28,9 +28,10 @@ while True:
 	if not success:
 		break
 	# resize the frame (so we can process it faster) and grab the
-	# frame dimensions
-	frame = imutils.resize(frame, width=500)
+	frame = imutils.resize(frame, height=1000)
 	(H, W) = frame.shape[:2]
+	# frame dimensions
+	# frame = imutils.resize(frame, width=500)
 		# check to see if we are currently tracking an object
 	if initBB is not None:
 		print('runn')
