@@ -66,6 +66,15 @@ while True:
 		# sure you press ENTER or SPACE after selecting the ROI)
 		initBB = cv2.selectROI("Frame", frame, fromCenter=False,
 			showCrosshair=True)
+		
+		x1, y1, w, h = initBB
+		x2 = x1+w
+		y2 = y1+h
+		cv2.rectangle(frame,(x1,y1), (x2,y2), (0,255,0),5)
+		
+		cv2.imwrite('sample.jpg',frame)
+
+		print(initBB, 'COORDS')
 		# start OpenCV object tracker using the supplied bounding box
 		# coordinates, then start the FPS throughput estimator as well
 		tracker.init(frame, initBB)
